@@ -26,5 +26,3 @@ Isso demonstra uma forma concisa e eficiente de realizar buscas em coleções de
 ## Desenvolvedor 🧑‍💻
 
 Fabricio Vicente Soares
-
-Este README demonstra a aplicação dos princípios de POO no desenvolvimento de um sistema simples de gerenciamento de produtos, com funcionalidades extras e melhorias visuais. 👍
