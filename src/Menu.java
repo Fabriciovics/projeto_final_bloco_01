@@ -2,6 +2,7 @@ import controller.ProdutoController;
 import model.Console;
 import model.Jogos;
 import model.Produto;
+import util.Cores;
 
 import java.io.IOException;
 import java.util.InputMismatchException;
@@ -12,7 +13,7 @@ public class Menu {
     public static void main(String[] args) {
         //Declaração de variaveis
         int opcao,id,tipo,quantidade;
-        String nome,modelo,plataforma;
+        String nome,modelo,plataforma,buscaTipo;
         double preco;
 
 
@@ -21,8 +22,28 @@ public class Menu {
         //Scanner - para entrada de dados
         Scanner leia = new Scanner(System.in);
 
+        Console c1 = new Console(1,"ps5",1,234,2,"asd");
+        produtos.criarProduto(c1);
+
+        Console c2 = new Console(2,"ps5",1,234,2,"asd");
+        produtos.criarProduto(c2);
+
+        Console c3 = new Console(3,"ps5",1,234,2,"asd");
+        produtos.criarProduto(c3);
+
+        Jogos j1 = new Jogos(1,"ps5",1,234,2,"asd");
+        produtos.criarProduto(j1);
+
+        Jogos j2 = new Jogos(1,"ps5",1,234,2,"asd");
+        produtos.criarProduto(j2);
+
+        Jogos j3 = new Jogos(1,"ps5",1,234,2,"asd");
+        produtos.criarProduto(j3);
+
+
         //Menu
         while (true) {
+            System.out.println(Cores.TEXT_YELLOW);
             System.out.println("*****************************************************");
             System.out.println("                  <<< ZÉ GAMES >>>                   ");
             System.out.println("*****************************************************");
@@ -32,6 +53,7 @@ public class Menu {
             System.out.println("            3 - Buscar Produto por ID                ");
             System.out.println("            4 - Atualizar Produto                    ");
             System.out.println("            5 - Excluir Produto                      ");
+            System.out.println("            6 - Buscar por Tipo                      ");
             System.out.println("            0 - Sair                                 ");
             System.out.println("                                                     ");
             System.out.println("*****************************************************");
@@ -144,6 +166,14 @@ public class Menu {
                     System.out.println("Digite o ID: ");
                     id = leia.nextInt();
                     produtos.excluirProduto(id);
+                    keyPress();
+                    break;
+                case 6:
+                    System.out.println("Buscar por tipo \n\n");
+                    System.out.println("Digite o tipo: ");
+                    leia.skip("\\R");
+                    buscaTipo = leia.nextLine();
+                    produtos.buscarPorTipo(buscaTipo);
                     keyPress();
                     break;
             }
