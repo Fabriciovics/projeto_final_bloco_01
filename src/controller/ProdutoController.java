@@ -4,9 +4,11 @@ import model.Produto;
 import repository.ProdutoRepository;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
-public class ProdutoController implements ProdutoRepository {
+public  class ProdutoController implements ProdutoRepository {
 
     int id = 0;
 
@@ -57,6 +59,7 @@ public class ProdutoController implements ProdutoRepository {
         }
     }
 
+
     @Override
     public void procurarPorID(int id){
         Optional<Produto> produto = buscarNaCollection(id);
@@ -65,6 +68,30 @@ public class ProdutoController implements ProdutoRepository {
 
         }else {
             System.out.printf("Produto id: %d , nao foi encontrado", id);
+        }
+    }
+    @Override
+    public void buscarPorTipo(String tipo) {
+        List<Produto> produtosEncontrados = listaProdutos.stream()
+                .filter(produto -> {
+                    String tipoProduto = "";
+                    if (produto.getTipo() == 1) {
+                        tipoProduto = "Console";
+                    } else if (produto.getTipo() == 2) {
+                        tipoProduto = "Jogos";
+                    }
+                    return tipoProduto.equalsIgnoreCase(tipo);
+                })
+                .collect(Collectors.toList());
+
+        if (!produtosEncontrados.isEmpty()) {
+            System.out.println( "--- Produtos do tipo '" + tipo + "' ---") ;
+            for (Produto produto : produtosEncontrados) {
+                produto.visualizar();
+            }
+            System.out.println("--------------------------------------");
+        } else {
+            System.out.println("Nenhum produto do tipo '" + tipo + "' encontrado." );
         }
     }
 
