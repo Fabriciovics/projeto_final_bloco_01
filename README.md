@@ -1,4 +1,4 @@
-## Generation Brasil: Sistema de Cadastro e Busca de Produtos - Projeto Final Bloco 1
+## Generation Brasil: CRUD - Projeto Final Bloco 1
 
 **Este projeto tem como foco principal a aplicação e o teste dos conhecimentos em Programação Orientada a Objetos (POO).**
 
