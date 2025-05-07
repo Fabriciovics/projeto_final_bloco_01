@@ -10,7 +10,7 @@ public interface ProdutoRepository {
     public void consultarProduto(int id);
     public void atualizarProduto(Produto produto);
     public void excluirProduto(int id);
-
+    public void buscarPorTipo(String tipo);
     //Auxiliares
     public void procurarPorID(int id);
 
