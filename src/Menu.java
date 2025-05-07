@@ -22,25 +22,6 @@ public class Menu {
         //Scanner - para entrada de dados
         Scanner leia = new Scanner(System.in);
 
-        Console c1 = new Console(1,"ps5",1,234,2,"asd");
-        produtos.criarProduto(c1);
-
-        Console c2 = new Console(2,"ps5",1,234,2,"asd");
-        produtos.criarProduto(c2);
-
-        Console c3 = new Console(3,"ps5",1,234,2,"asd");
-        produtos.criarProduto(c3);
-
-        Jogos j1 = new Jogos(1,"ps5",1,234,2,"asd");
-        produtos.criarProduto(j1);
-
-        Jogos j2 = new Jogos(1,"ps5",1,234,2,"asd");
-        produtos.criarProduto(j2);
-
-        Jogos j3 = new Jogos(1,"ps5",1,234,2,"asd");
-        produtos.criarProduto(j3);
-
-
         //Menu
         while (true) {
             System.out.println(Cores.TEXT_YELLOW);
